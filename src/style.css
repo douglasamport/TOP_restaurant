@@ -1,0 +1,26 @@
+@import "./modules/navagation_style.css";
+
+
+* {
+    box-sizing: border-box;
+}
+.red {
+    color: red;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row;
+}
+
+
+
+ul {
+    list-style-type: none;
+     margin: 0;
+     padding: 0;
+}
+
+.hidden {
+    display: none;
+}
