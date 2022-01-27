@@ -2,9 +2,9 @@ import './style.css'
 import { navagation } from './modules/navagation'
 import { homepage } from './modules/homepage'
 import { cusinepage } from './modules/cusine'
-import { contactpage } from './modules/contact'
+import { aboutpage } from './modules/about'
 
-
+//Page Build From Modules
 
 let content = document.createElement('div')
 content.id = 'content'
@@ -19,44 +19,38 @@ content.appendChild(homepage())
 let cusine = cusinepage()
 content.appendChild(cusinepage())
 
-let contact = contactpage()
-content.appendChild(contactpage())
+let about = aboutpage()
+content.appendChild(aboutpage())
 
-
-
-// Links and Event listeners below this line -----
+// Links and Event listeners
 
 let homeLink = document.getElementById('homeLink')
 let cusineLink = document.getElementById('cusineLink')
-let contactLink = document.getElementById('contactLink')
+let aboutLink = document.getElementById('aboutLink')
 
 home = document.getElementById('homepageWrapper')
 cusine = document.getElementById('cusinepageWrapper')
-contact = document.getElementById('contactpageWrapper')
+about = document.getElementById('aboutpageWrapper')
+
+function updateClasses(first, second, third) {
+    first.classList.remove('hidden')
+    first.classList.add('module-container')
+    second.classList.add('hidden')
+    second.classList.remove('module-container')
+    third.classList.add('hidden')
+    third.classList.remove('module-container')
+}
 
 homeLink.addEventListener('click', () => {
-    home.classList.remove('hidden')
-    cusine.classList.add('hidden')
-    contact.classList.add('hidden')
-    console.log('clicked')
+    updateClasses(home, cusine, about)
 });
 
 cusineLink.addEventListener('click', () => {
-    home.classList.add('hidden')
-    cusine.classList.remove('hidden')
-    contact.classList.add('hidden')
-    console.log('clicked')
+    updateClasses(cusine, about, home)
+   
 });
 
-contactLink.addEventListener('click', () => {
-    home.classList.add('hidden')
-    cusine.classList.add('hidden')
-    contact.classList.remove('hidden')
-    console.log('clicked')
+aboutLink.addEventListener('click', () => {
+    updateClasses(about, home, cusine)
+   
 });
-
-
-
-
-
-

@@ -3,7 +3,6 @@ function createAndClass(type='div', cls=null, id=null) {
     if (typeof cls == 'string') {
         element.classList.add(cls)
     }
-    // console.log(Array.isArray(cls), 'this one')
     if (Array.isArray(cls)) {
         cls.forEach(itm => element.classList.add(itm))
     }
@@ -12,6 +11,5 @@ function createAndClass(type='div', cls=null, id=null) {
     }
     return element
 }
-
 
 export { createAndClass }

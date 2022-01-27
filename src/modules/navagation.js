@@ -1,12 +1,17 @@
 import{ createAndClass } from './helper'
 
-
 function navagation() {
-    let header = createAndClass('div', 'Nav-container')
+   
+    let links = [['Accueil', 'homeLink'], ['Cuisine', 'cusineLink'], ['Qui nous sommes', 'aboutLink']] // info for links - ['copy', 'id']
+    
+    let header = createAndClass('div', 'nav-container')
+    let linksContainer = createAndClass('div', 'link-container' )
     let ul = createAndClass('ul', ['nav-links', 'flex-row'])
-    let links = [['Home', 'homeLink'], ['Cusine', 'cusineLink'], ['Contact', 'contactLink'] ]
+
     createAndAppendLi(ul, links)
-    header.appendChild(ul)
+    linksContainer.appendChild(ul)
+    header.appendChild(linksContainer)
+
     return header
 }
 
@@ -15,7 +20,7 @@ function createAndAppendLi(parent, items){
         let li = document.createElement('li')
         li.textContent = itm[0]
         li.id = itm[1]
-        li.classList.add('link', 'navlink')
+        li.classList.add('link', 'navLink', 'outfit200')
         parent.appendChild(li)
     })
 }
